@@ -4,7 +4,7 @@ import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/cart.module.css';
 import "../styles/cart.css";
 
-const Cart = ({ allProducts, setAllProducts }) => {
+const Cart = ({ allProducts, setAllProducts, setBasketIconAnimation }) => {
   const [active, setActive] = useState(false);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
@@ -23,17 +23,21 @@ const Cart = ({ allProducts, setAllProducts }) => {
   const onDeleteProduct = platillo => {
     const results = allProducts.filter(item => item.id !== platillo.id);
     setAllProducts(results);
+    setBasketIconAnimation(true);
+    setTimeout(() => setBasketIconAnimation(false), 500);
   };
 
   const onCleanCart = () => {
     setAllProducts([]);
+    setBasketIconAnimation(true);
+    setTimeout(() => setBasketIconAnimation(false), 500);
   };
 
   return (
     <header>
       <div className='container-icon'>
         <div className='container-cart-icon' onClick={() => setActive(!active)}>
-          <FontAwesomeIcon icon={faBasketShopping} className={styles['basket-icon']} />
+          <FontAwesomeIcon icon={faBasketShopping} className={`${styles['basket-icon']} ${setBasketIconAnimation ? styles['animate'] : ''}`} />
           <div className={styles['count-products']}>
             <span id={styles['contador-productos']}>{countProducts}</span>
           </div>

@@ -2,7 +2,7 @@ import Platillo from "./Platillo";
 import Card from "./Card";
 import "../styles/menu.css";
 
-function Menu({ allProducts, setAllProducts }) {
+function Menu({ allProducts, setAllProducts, setBasketIconAnimation }) {
   const menu = [
     {
       id: 1,
@@ -44,6 +44,8 @@ function Menu({ allProducts, setAllProducts }) {
 
   const onAddProduct = platillo => {
     setAllProducts([...allProducts, platillo]);
+    setBasketIconAnimation(true);
+    setTimeout(() => setBasketIconAnimation(false), 500);
   };
 
   return (
@@ -59,6 +61,7 @@ function Menu({ allProducts, setAllProducts }) {
           setAllProducts={setAllProducts}
           onAddProduct={onAddProduct}
           platillo={platillo}
+          setBasketIconAnimation={setBasketIconAnimation}
         />
       ))}
     </Card>

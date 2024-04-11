@@ -1,18 +1,18 @@
+// App.js
+import { useState } from 'react';
 import Menu from './Menu';
 import TituloMenu from './TituloMenu';
-import { useState } from 'react';
 import Cart from './Cart';
-import "../styles/menu.css"
 
 function App() {
-
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
+  const [basketIconAnimation, setBasketIconAnimation] = useState(false);
 
   return (
     <div className='App'>
-      <TituloMenu/>
+      <TituloMenu />
       <Cart 
         allProducts={allProducts}
         setAllProducts={setAllProducts}
@@ -20,6 +20,7 @@ function App() {
         countProducts={countProducts}
         setCountProducts={setCountProducts}
         setTotal={setTotal}
+        setBasketIconAnimation={setBasketIconAnimation}
       />
       <Menu 
         allProducts={allProducts}
@@ -28,6 +29,7 @@ function App() {
         setTotal={setTotal}
         countProducts={countProducts}
         setCountProducts={setCountProducts}
+        setBasketIconAnimation={setBasketIconAnimation}
       />
     </div>
   );

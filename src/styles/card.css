@@ -23,14 +23,3 @@
     flex: 1;
 }
 
-.card .platillo .boton-carrito {
-    background-color: #c00;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    width:fit-content;
-    margin-top: 5px;
-    float:  right;
-  }

@@ -58,7 +58,7 @@
   color: #cc0000;
 
 .basket-icon.animate {
-	animation: button-pulse 0.5s ease;
+animation: button-pulse 0.5s ease;
 }
 
   @keyframes button-pulse {

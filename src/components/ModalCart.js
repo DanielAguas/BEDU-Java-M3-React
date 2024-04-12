@@ -5,12 +5,7 @@ import styles from '../styles/modal.module.css'; // Estilos para el modal
 const ModalCart = ({ children, onClose }) => {
   return ReactDOM.createPortal(
     <div className={styles['modal-overlay']} onClick={onClose}>
-      <div className={styles['modal-content']} onClick={(e) => e.stopPropagation()}>
-        <div className={styles['modal-header']}>
-          <button className={styles['modal-close']} onClick={onClose}>
-            &times;
-          </button>
-        </div>
+      <div className={styles['modal-content']} onClick={(e) => e.stopPropagation()}> 
         <div className={styles['modal-body']}>
           {children}
         </div>

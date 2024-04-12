@@ -1,13 +1,13 @@
 .count-products {
 	position: absolute;
-	top: 55%;
+	top: 20%;
 	right: 0;
     margin-right: 20px;
 	background-color: #000;
 	color: #fff;
 	width: 30px;
 	height: 30px;
-
+	z-index: 10;
 	display: flex;
 	justify-content: center;
 	align-items: center;

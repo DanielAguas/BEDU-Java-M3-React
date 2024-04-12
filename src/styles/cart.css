@@ -9,15 +9,15 @@ header {
 }
 
 .container-cart-products {
-	position: absolute;
-	top: 50px;
-	right: 0;
-    margin-right: 10px;
-	background-color: #ffffff;
-	width: 400px;
-	z-index: 1;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-	border-radius: 10px;
+	position: fixed;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .cart-product {

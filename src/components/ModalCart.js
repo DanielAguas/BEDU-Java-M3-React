@@ -11,7 +11,6 @@ const ModalCart = ({ children, onClose }) => {
             &times;
           </button>
         </div>
-        {/* Contenido del carrito */}
         <div className={styles['modal-body']}>
           {children}
         </div>

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/cart.module.css';
-import ModalCart from './ModalCart'; // Importar el componente del modal
+import ModalCart from './ModalCart';
 import "../styles/cart.css";
 
 const Cart = ({ allProducts, setAllProducts, setBasketIconAnimation }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar si el modal está abierto
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
 

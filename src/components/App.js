@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Menu from './Menu';
 import TituloMenu from './TituloMenu';
 import Cart from './Cart';
+import MenuContext from '../context/MenuContext';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -11,25 +12,30 @@ function App() {
 
   return (
     <div className='App'>
-      <TituloMenu />
-      <Cart 
-        allProducts={allProducts}
-        setAllProducts={setAllProducts}
-        total={total}
-        countProducts={countProducts}
-        setCountProducts={setCountProducts}
-        setTotal={setTotal}
-        setBasketIconAnimation={setBasketIconAnimation}
-      />
-      <Menu 
-        allProducts={allProducts}
-        setAllProducts={setAllProducts}
-        total={total}
-        setTotal={setTotal}
-        countProducts={countProducts}
-        setCountProducts={setCountProducts}
-        setBasketIconAnimation={setBasketIconAnimation}
-      />
+      <MenuContext.Provider
+        value={{
+          allProducts,
+          setAllProducts,
+          total,
+          setTotal,
+          countProducts,
+          setCountProducts,
+          basketIconAnimation,
+          setBasketIconAnimation,
+        }}
+      >
+        <Cart 
+          allProducts={allProducts}
+          setAllProducts={setAllProducts}
+          total={total}
+          countProducts={countProducts}
+          setCountProducts={setCountProducts}
+          setTotal={setTotal}
+          setBasketIconAnimation={setBasketIconAnimation}
+        />
+        <TituloMenu />
+        <Menu />
+      </MenuContext.Provider>
     </div>
   );
 }

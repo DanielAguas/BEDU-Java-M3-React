@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from '../styles/modal.module.css'; // Estilos para el modal
+import styles from '../styles/modal.module.css';
 
 const ModalCart = ({ children, onClose }) => {
   return ReactDOM.createPortal(
